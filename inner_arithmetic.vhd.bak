@@ -1,0 +1,7 @@
+library eaaa;
+library ieee.std_logic_1164.all;
+
+-- This entity is responsible for taking in two 4-bit integers and adding
+-- them together, allowing for a carry in, and a carry out and an operation 
+-- variable to decide whether to subtract or add
+entity inner_arithmetic is

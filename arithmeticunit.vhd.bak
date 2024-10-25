@@ -1,0 +1,20 @@
+library eaaa;
+library ieee.std_logic_1164.all;
+
+-- This adder/subtractor is responsible for taking in two 4-bit integers and adding
+-- them together, allowing for a carry in, and a carry out and an operation 
+-- variable to decide whether to subtract or add
+entity adder_subtractor_4bits is
+
+	port (
+		A    : in std_logic_vector(3 downto 0);
+		B 	  : in std_logic_vector(3 downto 0);
+		
+		C0   : in std_logic;
+		OPau : in std_logic;
+		
+		C4   : out std_logic;
+		S    : out std_logic_vector(3 downto 0)
+	);
+	
+end adder4bit;

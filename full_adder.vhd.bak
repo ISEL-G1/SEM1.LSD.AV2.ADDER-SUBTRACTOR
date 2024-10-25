@@ -1,0 +1,16 @@
+library eaaa;
+library ieee.std_logic_1164.all;
+
+-- This entity is responsible for acting as a full adder, using two half-adders
+-- in succession 
+entity half_adder is 
+
+	port (
+		A : std_logic;
+		B : std_logic;
+		
+		carry_in  : std_logic;
+		carry_out : std_logic;
+		
+		result : std_logic
+	);

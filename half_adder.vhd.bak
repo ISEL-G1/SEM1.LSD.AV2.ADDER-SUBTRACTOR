@@ -1,0 +1,14 @@
+library eaaa;
+library ieee.std_logic_1164.all;
+
+-- This entity is responsible for acting as a half adder, simply XOR'ing two
+-- to sum them returning their value and carry.
+entity half_adder is 
+
+	port (
+		A 		 : std_logic;
+		B 		 : std_logic;
+		
+		result : std_logic;
+		carry  : std_logic
+	);

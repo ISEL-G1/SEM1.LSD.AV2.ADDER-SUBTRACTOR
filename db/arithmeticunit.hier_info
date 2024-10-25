@@ -1,0 +1,178 @@
+|arithmeticunit
+A[0] => inner_arithmetic:instance_inner_arithmetic.A[0]
+A[1] => inner_arithmetic:instance_inner_arithmetic.A[1]
+A[2] => inner_arithmetic:instance_inner_arithmetic.A[2]
+A[3] => inner_arithmetic:instance_inner_arithmetic.A[3]
+A[3] => flags:instance_flags.A
+B[0] => inner_arithmetic:instance_inner_arithmetic.B[0]
+B[1] => inner_arithmetic:instance_inner_arithmetic.B[1]
+B[2] => inner_arithmetic:instance_inner_arithmetic.B[2]
+B[3] => comb.IN0
+B[3] => inner_arithmetic:instance_inner_arithmetic.B[3]
+carry_in => inner_arithmetic:instance_inner_arithmetic.carry_in
+carry_out <= flags:instance_flags.carry_out
+operation_bit => comb.IN1
+operation_bit => inner_arithmetic:instance_inner_arithmetic.operation_bit
+result[0] <= inner_arithmetic:instance_inner_arithmetic.result[0]
+result[1] <= inner_arithmetic:instance_inner_arithmetic.result[1]
+result[2] <= inner_arithmetic:instance_inner_arithmetic.result[2]
+result[3] <= inner_arithmetic:instance_inner_arithmetic.result[3]
+overflow <= flags:instance_flags.overflow
+
+
+|arithmeticunit|inner_arithmetic:instance_inner_arithmetic
+A[0] => adder_subtractor_4bits:instance_adder_subtractor_4bits.A[0]
+A[1] => adder_subtractor_4bits:instance_adder_subtractor_4bits.A[1]
+A[2] => adder_subtractor_4bits:instance_adder_subtractor_4bits.A[2]
+A[3] => adder_subtractor_4bits:instance_adder_subtractor_4bits.A[3]
+B[0] => b_xor[0].IN0
+B[1] => b_xor[1].IN0
+B[2] => b_xor[2].IN0
+B[3] => b_xor[3].IN0
+carry_in => comb.IN0
+operation_bit => b_xor[0].IN1
+operation_bit => b_xor[1].IN1
+operation_bit => b_xor[2].IN1
+operation_bit => b_xor[3].IN1
+operation_bit => comb.IN1
+operation_bit => carry_out.IN1
+result[0] <= adder_subtractor_4bits:instance_adder_subtractor_4bits.result[0]
+result[1] <= adder_subtractor_4bits:instance_adder_subtractor_4bits.result[1]
+result[2] <= adder_subtractor_4bits:instance_adder_subtractor_4bits.result[2]
+result[3] <= adder_subtractor_4bits:instance_adder_subtractor_4bits.result[3]
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|arithmeticunit|inner_arithmetic:instance_inner_arithmetic|adder_subtractor_4bits:instance_adder_subtractor_4bits
+A[0] => full_adder:instance_full_adder_1.A
+A[1] => full_adder:instance_full_adder_2.A
+A[2] => full_adder:instance_full_adder_3.A
+A[3] => full_adder:instance_full_adder_4.A
+B[0] => full_adder:instance_full_adder_1.B
+B[1] => full_adder:instance_full_adder_2.B
+B[2] => full_adder:instance_full_adder_3.B
+B[3] => full_adder:instance_full_adder_4.B
+carry_in => full_adder:instance_full_adder_1.carry_in
+carry_out <= full_adder:instance_full_adder_4.carry_out
+result[0] <= full_adder:instance_full_adder_1.result
+result[1] <= full_adder:instance_full_adder_2.result
+result[2] <= full_adder:instance_full_adder_3.result
+result[3] <= full_adder:instance_full_adder_4.result
+
+
+|arithmeticunit|inner_arithmetic:instance_inner_arithmetic|adder_subtractor_4bits:instance_adder_subtractor_4bits|full_adder:instance_full_adder_1
+A => half_adder:instance_half_adder_1.A
+B => half_adder:instance_half_adder_1.B
+carry_in => ~NO_FANOUT~
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+result <= half_adder:instance_half_adder_2.result
+
+
+|arithmeticunit|inner_arithmetic:instance_inner_arithmetic|adder_subtractor_4bits:instance_adder_subtractor_4bits|full_adder:instance_full_adder_1|half_adder:instance_half_adder_1
+A => result.IN0
+A => carry_out.IN0
+B => result.IN1
+B => carry_out.IN1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|arithmeticunit|inner_arithmetic:instance_inner_arithmetic|adder_subtractor_4bits:instance_adder_subtractor_4bits|full_adder:instance_full_adder_1|half_adder:instance_half_adder_2
+A => result.IN0
+A => carry_out.IN0
+B => result.IN1
+B => carry_out.IN1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|arithmeticunit|inner_arithmetic:instance_inner_arithmetic|adder_subtractor_4bits:instance_adder_subtractor_4bits|full_adder:instance_full_adder_2
+A => half_adder:instance_half_adder_1.A
+B => half_adder:instance_half_adder_1.B
+carry_in => ~NO_FANOUT~
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+result <= half_adder:instance_half_adder_2.result
+
+
+|arithmeticunit|inner_arithmetic:instance_inner_arithmetic|adder_subtractor_4bits:instance_adder_subtractor_4bits|full_adder:instance_full_adder_2|half_adder:instance_half_adder_1
+A => result.IN0
+A => carry_out.IN0
+B => result.IN1
+B => carry_out.IN1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|arithmeticunit|inner_arithmetic:instance_inner_arithmetic|adder_subtractor_4bits:instance_adder_subtractor_4bits|full_adder:instance_full_adder_2|half_adder:instance_half_adder_2
+A => result.IN0
+A => carry_out.IN0
+B => result.IN1
+B => carry_out.IN1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|arithmeticunit|inner_arithmetic:instance_inner_arithmetic|adder_subtractor_4bits:instance_adder_subtractor_4bits|full_adder:instance_full_adder_3
+A => half_adder:instance_half_adder_1.A
+B => half_adder:instance_half_adder_1.B
+carry_in => ~NO_FANOUT~
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+result <= half_adder:instance_half_adder_2.result
+
+
+|arithmeticunit|inner_arithmetic:instance_inner_arithmetic|adder_subtractor_4bits:instance_adder_subtractor_4bits|full_adder:instance_full_adder_3|half_adder:instance_half_adder_1
+A => result.IN0
+A => carry_out.IN0
+B => result.IN1
+B => carry_out.IN1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|arithmeticunit|inner_arithmetic:instance_inner_arithmetic|adder_subtractor_4bits:instance_adder_subtractor_4bits|full_adder:instance_full_adder_3|half_adder:instance_half_adder_2
+A => result.IN0
+A => carry_out.IN0
+B => result.IN1
+B => carry_out.IN1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|arithmeticunit|inner_arithmetic:instance_inner_arithmetic|adder_subtractor_4bits:instance_adder_subtractor_4bits|full_adder:instance_full_adder_4
+A => half_adder:instance_half_adder_1.A
+B => half_adder:instance_half_adder_1.B
+carry_in => ~NO_FANOUT~
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+result <= half_adder:instance_half_adder_2.result
+
+
+|arithmeticunit|inner_arithmetic:instance_inner_arithmetic|adder_subtractor_4bits:instance_adder_subtractor_4bits|full_adder:instance_full_adder_4|half_adder:instance_half_adder_1
+A => result.IN0
+A => carry_out.IN0
+B => result.IN1
+B => carry_out.IN1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|arithmeticunit|inner_arithmetic:instance_inner_arithmetic|adder_subtractor_4bits:instance_adder_subtractor_4bits|full_adder:instance_full_adder_4|half_adder:instance_half_adder_2
+A => result.IN0
+A => carry_out.IN0
+B => result.IN1
+B => carry_out.IN1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|arithmeticunit|flags:instance_flags
+A => overflow.IN0
+A => overflow.IN0
+B => overflow.IN1
+B => overflow.IN1
+R => overflow.IN1
+R => overflow.IN1
+carry_in => carry_out.DATAIN
+carry_out <= carry_in.DB_MAX_OUTPUT_PORT_TYPE
+overflow <= overflow.DB_MAX_OUTPUT_PORT_TYPE
+
+

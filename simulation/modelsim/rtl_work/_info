@@ -23,9 +23,9 @@ VPcKVRO8a`2U6;9EEBc?M]3
 !s100 bzi`X7P^TodcNHYKD_>Zz2
 Z6 OV;C;2020.1;71
 31
-Z7 !s110 1730382427
+Z7 !s110 1730385210
 !i10b 1
-Z8 !s108 1730382427.000000
+Z8 !s108 1730385209.000000
 Z9 !s90 -reportprogress|300|-93|-work|work|C:/dev/Quartus/LabC/adder_subtractor_4bits.vhd|
 Z10 !s107 C:/dev/Quartus/LabC/adder_subtractor_4bits.vhd|
 !i113 1
@@ -64,11 +64,11 @@ VN>==iz5H`0oZH_Z7D[0Ba2
 !s100 :FjaHD]oXTBA]XI[=<iY93
 R6
 31
-Z16 !s110 1730382426
+Z16 !s110 1730385209
 !i10b 1
-Z17 !s108 1730382426.000000
-Z18 !s90 -reportprogress|300|-93|-work|work|C:/dev/Quartus/LabC/arithmeticunit.vhd|
-Z19 !s107 C:/dev/Quartus/LabC/arithmeticunit.vhd|
+R8
+Z17 !s90 -reportprogress|300|-93|-work|work|C:/dev/Quartus/LabC/arithmeticunit.vhd|
+Z18 !s107 C:/dev/Quartus/LabC/arithmeticunit.vhd|
 !i113 1
 R11
 R12
@@ -85,31 +85,72 @@ R6
 31
 R16
 !i10b 1
+R8
 R17
 R18
-R19
+!i113 1
+R11
+R12
+Eflags
+Z19 w1729852676
+R2
+R3
+!i122 5
+R0
+Z20 8C:/dev/Quartus/LabC/flags.vhd
+Z21 FC:/dev/Quartus/LabC/flags.vhd
+l0
+L7 1
+VT<UMhVZ>3EDQFBY5e18FX3
+!s100 ibXnhZ`[?3JRddaVJTE0V3
+R6
+31
+R7
+!i10b 1
+Z22 !s108 1730385210.000000
+Z23 !s90 -reportprogress|300|-93|-work|work|C:/dev/Quartus/LabC/flags.vhd|
+!s107 C:/dev/Quartus/LabC/flags.vhd|
+!i113 1
+R11
+R12
+Abehavioral
+R2
+R3
+DEx4 work 5 flags 0 22 T<UMhVZ>3EDQFBY5e18FX3
+!i122 5
+l28
+L27 7
+V1TN2T@28I]:S8fTN]nSZO3
+!s100 gNj6Pi9LTEHI5U:La27^_2
+R6
+31
+R7
+!i10b 1
+R22
+R23
+Z24 !s107 C:/dev/Quartus/LabC/flags.vhd|
 !i113 1
 R11
 R12
 Efull_adder
-Z20 w1729852247
+Z25 w1730385085
 R2
 R3
 !i122 2
 R0
-Z21 8C:/dev/Quartus/LabC/full_adder.vhd
-Z22 FC:/dev/Quartus/LabC/full_adder.vhd
+Z26 8C:/dev/Quartus/LabC/full_adder.vhd
+Z27 FC:/dev/Quartus/LabC/full_adder.vhd
 l0
 L6 1
 VOUO;gSf6dhQn3OzTm4LMf0
 !s100 ]hdZUUZ_@dRMOH8;4[82?2
 R6
 31
-R7
+R16
 !i10b 1
 R8
-Z23 !s90 -reportprogress|300|-93|-work|work|C:/dev/Quartus/LabC/full_adder.vhd|
-Z24 !s107 C:/dev/Quartus/LabC/full_adder.vhd|
+Z28 !s90 -reportprogress|300|-93|-work|work|C:/dev/Quartus/LabC/full_adder.vhd|
+Z29 !s107 C:/dev/Quartus/LabC/full_adder.vhd|
 !i113 1
 R11
 R12
@@ -120,37 +161,37 @@ DEx4 work 10 full_adder 0 22 OUO;gSf6dhQn3OzTm4LMf0
 !i122 2
 l45
 L21 56
-VYPLM;8cRba;K>47aH?;HB3
-!s100 LQ]TK^EJKiME8JOBj7m:O2
+VoWn1e<aa_i:`D]L7HW9WO3
+!s100 T?0PNX@m`ZN0DW6FecnU12
 R6
 31
-R7
+R16
 !i10b 1
 R8
-R23
-R24
+R28
+R29
 !i113 1
 R11
 R12
 Ehalf_adder
-Z25 w1729851956
+Z30 w1729851956
 R2
 R3
 !i122 1
 R0
-Z26 8C:/dev/Quartus/LabC/half_adder.vhd
-Z27 FC:/dev/Quartus/LabC/half_adder.vhd
+Z31 8C:/dev/Quartus/LabC/half_adder.vhd
+Z32 FC:/dev/Quartus/LabC/half_adder.vhd
 l0
 L6 1
 V5A9:A6@gTm<DI]fd`6C]a0
 !s100 Rk8Y58EMd:CVUb@^SRGL80
 R6
 31
-R7
+R16
 !i10b 1
 R8
-Z28 !s90 -reportprogress|300|-93|-work|work|C:/dev/Quartus/LabC/half_adder.vhd|
-Z29 !s107 C:/dev/Quartus/LabC/half_adder.vhd|
+Z33 !s90 -reportprogress|300|-93|-work|work|C:/dev/Quartus/LabC/half_adder.vhd|
+Z34 !s107 C:/dev/Quartus/LabC/half_adder.vhd|
 !i113 1
 R11
 R12
@@ -165,22 +206,22 @@ VOKl2J4OG^IT6:^ZgO^PU^0
 !s100 2z3oh;BXC]Z95ZCXV:U:T1
 R6
 31
-R7
+R16
 !i10b 1
 R8
-R28
-R29
+R33
+R34
 !i113 1
 R11
 R12
 Einner_arithmetic
-w1730382330
+Z35 w1730384433
 R2
 R3
 !i122 4
 R0
-8C:/dev/Quartus/LabC/inner_arithmetic.vhd
-FC:/dev/Quartus/LabC/inner_arithmetic.vhd
+Z36 8C:/dev/Quartus/LabC/inner_arithmetic.vhd
+Z37 FC:/dev/Quartus/LabC/inner_arithmetic.vhd
 l0
 L7 1
 VVlgN2e[17f8gLzbbC[VO]2
@@ -189,9 +230,28 @@ R6
 31
 R7
 !i10b 1
-R8
-!s90 -reportprogress|300|-93|-work|work|C:/dev/Quartus/LabC/inner_arithmetic.vhd|
-!s107 C:/dev/Quartus/LabC/inner_arithmetic.vhd|
+R22
+Z38 !s90 -reportprogress|300|-93|-work|work|C:/dev/Quartus/LabC/inner_arithmetic.vhd|
+Z39 !s107 C:/dev/Quartus/LabC/inner_arithmetic.vhd|
+!i113 1
+R11
+R12
+Abehavioral
+R2
+R3
+DEx4 work 16 inner_arithmetic 0 22 VlgN2e[17f8gLzbbC[VO]2
+!i122 4
+l45
+L23 50
+VXRmf0^KO48b:iSY8@60eU3
+!s100 FGJ>:1_mm7AEG4VzSj]z60
+R6
+31
+R7
+!i10b 1
+R22
+R38
+R39
 !i113 1
 R11
 R12

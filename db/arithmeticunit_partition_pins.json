@@ -24,10 +24,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "overflow",
-					"strict" : false
-				},
-				{
 					"name" : "B[3]",
 					"strict" : false
 				},

@@ -51,16 +51,19 @@ architecture behavioral of arithmeticunit is
 			operation_bit : in std_logic;
 			
 			result 	 : out std_logic_vector(3 downto 0);
-			carry_out : out std_logic
+			carry_out : out std_logic;
+			B3_output : out std_logic
 		);
 		
 	end component;
 	
 	
-	-- Declares an intermediate "inner_arithmetic_result" signal so that we can
-	-- read its bits afterwards
+	-- Declares an intermediate "out_inner_arithmetic" signal so that we can
+	-- read its bits afterwards, the carry and a xor'd b3 signal with the 
+	-- operation bit, use inside the flags
 	signal out_inner_arithmetic : std_logic_vector(3 downto 0);
 	signal carry_inner_arithmetic : std_logic;
+	signal B3_xor : std_logic;
 
 begin
 
@@ -76,7 +79,8 @@ begin
 			operation_bit => operation_bit,
 			
 			result => out_inner_arithmetic,
-			carry_out => carry_inner_arithmetic
+			carry_out => carry_inner_arithmetic,
+			B3_output => B3_xor
 		);
 		
 	
@@ -85,7 +89,7 @@ begin
 		
 		port map (
 			A => A(3),
-			B => B(3) xor operation_bit,
+			B => B3_xor,
 			R => out_inner_arithmetic(3),
 			
 			carry_in  => carry_inner_arithmetic, 
@@ -94,6 +98,7 @@ begin
 			overflow => overflow
 		);
 		
+
 	result <= out_inner_arithmetic;
 
 end behavioral;

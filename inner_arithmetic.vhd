@@ -12,11 +12,13 @@ entity inner_arithmetic is
 				carry_in 	  : in std_logic;
 		operation_bit : in std_logic;
 		
-		result 	: out std_logic_vector(3 downto 0);
-		carry_out: out std_logic
+		result 	 : out std_logic_vector(3 downto 0);
+		carry_out : out std_logic;
+		B3_output : out std_logic
 	);
 	
 end inner_arithmetic;
+		
 		
 architecture behavioral of inner_arithmetic is
 
@@ -63,5 +65,6 @@ begin
 		
 
 	carry_out <= carry_adder_subtractor_4bits xor operation_bit;
+	B3_output <= b_xor(3);
 		
 end behavioral;		

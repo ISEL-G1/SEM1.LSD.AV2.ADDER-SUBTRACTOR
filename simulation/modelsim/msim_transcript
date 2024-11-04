@@ -12,75 +12,122 @@
 # 
 # vcom -93 -work work {C:/dev/Quartus/LabC/arithmeticunit.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:47:06 on Oct 31,2024
+# Start time: 11:12:12 on Nov 04,2024
 # vcom -reportprogress 300 -93 -work work C:/dev/Quartus/LabC/arithmeticunit.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity arithmeticunit
 # -- Compiling architecture behavioral of arithmeticunit
-# End time: 13:47:06 on Oct 31,2024, Elapsed time: 0:00:00
+# End time: 11:12:12 on Nov 04,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/dev/Quartus/LabC/half_adder.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:47:07 on Oct 31,2024
+# Start time: 11:12:13 on Nov 04,2024
 # vcom -reportprogress 300 -93 -work work C:/dev/Quartus/LabC/half_adder.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity half_adder
 # -- Compiling architecture structural of half_adder
-# End time: 13:47:07 on Oct 31,2024, Elapsed time: 0:00:00
+# End time: 11:12:13 on Nov 04,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/dev/Quartus/LabC/full_adder.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:47:07 on Oct 31,2024
+# Start time: 11:12:13 on Nov 04,2024
 # vcom -reportprogress 300 -93 -work work C:/dev/Quartus/LabC/full_adder.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity full_adder
 # -- Compiling architecture behavioral of full_adder
-# End time: 13:47:07 on Oct 31,2024, Elapsed time: 0:00:00
+# End time: 11:12:14 on Nov 04,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/dev/Quartus/LabC/adder_subtractor_4bits.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:47:07 on Oct 31,2024
+# Start time: 11:12:14 on Nov 04,2024
 # vcom -reportprogress 300 -93 -work work C:/dev/Quartus/LabC/adder_subtractor_4bits.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity adder_subtractor_4bits
 # -- Compiling architecture behavioral of adder_subtractor_4bits
-# End time: 13:47:07 on Oct 31,2024, Elapsed time: 0:00:00
+# End time: 11:12:14 on Nov 04,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/dev/Quartus/LabC/inner_arithmetic.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:47:07 on Oct 31,2024
+# Start time: 11:12:14 on Nov 04,2024
 # vcom -reportprogress 300 -93 -work work C:/dev/Quartus/LabC/inner_arithmetic.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity inner_arithmetic
 # -- Compiling architecture behavioral of inner_arithmetic
-# ** Error: C:/dev/Quartus/LabC/inner_arithmetic.vhd(60): (vcom-1436) Actual expression (infix expression) of formal "carry_in" is not globally static.
-# ** Note: C:/dev/Quartus/LabC/inner_arithmetic.vhd(70): VHDL Compiler exiting
-# End time: 13:47:07 on Oct 31,2024, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
-# ** Error: C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/vcom failed.
-# Error in macro ./arithmeticunit_run_msim_rtl_vhdl.do line 12
-# C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/vcom failed.
-#     while executing
-# "vcom -93 -work work {C:/dev/Quartus/LabC/inner_arithmetic.vhd}"
+# End time: 11:12:14 on Nov 04,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/dev/Quartus/LabC/flags.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:12:14 on Nov 04,2024
+# vcom -reportprogress 300 -93 -work work C:/dev/Quartus/LabC/flags.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity flags
+# -- Compiling architecture behavioral of flags
+# End time: 11:12:14 on Nov 04,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
 vsim work.arithmeticunit
 # vsim work.arithmeticunit 
-# Start time: 13:47:11 on Oct 31,2024
+# Start time: 11:13:02 on Nov 04,2024
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
 # Loading work.arithmeticunit(behavioral)
-# ** Error: (vsim-3173) Entity 'C:/dev/Quartus/LabC/simulation/modelsim/rtl_work.inner_arithmetic' has no architecture.
-# Load interrupted
-# Error loading design
-# End time: 13:47:12 on Oct 31,2024, Elapsed time: 0:00:01
-# Errors: 1, Warnings: 0
+# Loading work.inner_arithmetic(behavioral)
+# Loading work.adder_subtractor_4bits(behavioral)
+# Loading work.full_adder(behavioral)
+# Loading work.half_adder(structural)
+# Loading work.flags(behavioral)
+add wave -position insertpoint  \
+sim:/arithmeticunit/A \
+sim:/arithmeticunit/B \
+sim:/arithmeticunit/carry_in \
+sim:/arithmeticunit/carry_out \
+sim:/arithmeticunit/operation_bit \
+sim:/arithmeticunit/result \
+sim:/arithmeticunit/overflow
+add wave -position insertpoint  \
+sim:/arithmeticunit/A \
+sim:/arithmeticunit/B \
+sim:/arithmeticunit/carry_in \
+sim:/arithmeticunit/carry_out \
+sim:/arithmeticunit/operation_bit \
+sim:/arithmeticunit/result \
+sim:/arithmeticunit/overflow \
+sim:/arithmeticunit/out_inner_arithmetic \
+sim:/arithmeticunit/carry_inner_arithmetic \
+sim:/arithmeticunit/B3_xor
+add wave -position insertpoint  \
+sim:/arithmeticunit/A \
+sim:/arithmeticunit/B \
+sim:/arithmeticunit/carry_in \
+sim:/arithmeticunit/carry_out \
+sim:/arithmeticunit/operation_bit \
+sim:/arithmeticunit/result \
+sim:/arithmeticunit/overflow \
+sim:/arithmeticunit/out_inner_arithmetic \
+sim:/arithmeticunit/carry_inner_arithmetic \
+sim:/arithmeticunit/B3_xor
+force -freeze sim:/arithmeticunit/A 0000 0
+force -freeze sim:/arithmeticunit/B 0000 0
+force -freeze sim:/arithmeticunit/carry_in 0 0
+force -freeze sim:/arithmeticunit/operation_bit 1 0
+run
+force -freeze sim:/arithmeticunit/A 0010 0
+force -freeze sim:/arithmeticunit/B 0001 0
+force -freeze sim:/arithmeticunit/carry_in 0 0
+force -freeze sim:/arithmeticunit/operation_bit 1 0
+run
+# End time: 11:15:20 on Nov 04,2024, Elapsed time: 0:02:18
+# Errors: 0, Warnings: 0

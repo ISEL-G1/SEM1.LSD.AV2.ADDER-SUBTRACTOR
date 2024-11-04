@@ -28,11 +28,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "B[3]",
+					"name" : "operation_bit",
 					"strict" : false
 				},
 				{
-					"name" : "operation_bit",
+					"name" : "B[3]",
 					"strict" : false
 				},
 				{
@@ -40,19 +40,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "A[0]",
-					"strict" : false
-				},
-				{
-					"name" : "B[0]",
-					"strict" : false
-				},
-				{
-					"name" : "A[1]",
-					"strict" : false
-				},
-				{
-					"name" : "B[1]",
+					"name" : "B[2]",
 					"strict" : false
 				},
 				{
@@ -60,7 +48,23 @@
 					"strict" : false
 				},
 				{
-					"name" : "B[2]",
+					"name" : "B[1]",
+					"strict" : false
+				},
+				{
+					"name" : "A[1]",
+					"strict" : false
+				},
+				{
+					"name" : "B[0]",
+					"strict" : false
+				},
+				{
+					"name" : "carry_in",
+					"strict" : false
+				},
+				{
+					"name" : "A[0]",
 					"strict" : false
 				}
 			]

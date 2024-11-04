@@ -39,6 +39,7 @@ architecture behavioral of inner_arithmetic is
 	
 	-- Declares a temporary variable to store the adder output for later
 	signal carry_adder_subtractor_4bits : std_logic;
+	signal carry_adder_subtractor_4bits2 : std_logic;
 	signal b_xor : std_logic_vector(3 downto 0);
 
 begin
@@ -57,13 +58,14 @@ begin
 			A => A,
 			B => b_xor,
 			
-			carry_in  => carry_in xor operation_bit,
+			carry_in  => carry_adder_subtractor_4bits2,
 			carry_out => carry_adder_subtractor_4bits,
 			
 			result => result
 		);
 		
 
+	carry_adder_subtractor_4bits2 <= carry_in xor operation_bit;
 	carry_out <= carry_adder_subtractor_4bits xor operation_bit;
 	B3_output <= b_xor(3);
 		

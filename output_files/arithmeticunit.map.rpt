@@ -1,5 +1,5 @@
 Analysis & Synthesis report for arithmeticunit
-Thu Oct 31 13:46:03 2024
+Mon Nov 04 11:10:28 2024
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -43,13 +43,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Oct 31 13:46:03 2024       ;
+; Analysis & Synthesis Status        ; Successful - Mon Nov 04 11:10:28 2024       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; arithmeticunit                              ;
 ; Top-level Entity Name              ; arithmeticunit                              ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 6                                           ;
-;     Total combinational functions  ; 6                                           ;
+; Total logic elements               ; 9                                           ;
+;     Total combinational functions  ; 9                                           ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
 ; Total pins                         ; 16                                          ;
@@ -183,16 +183,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+---------------------+
 ; Resource                                    ; Usage               ;
 +---------------------------------------------+---------------------+
-; Estimated Total logic elements              ; 6                   ;
+; Estimated Total logic elements              ; 9                   ;
 ;                                             ;                     ;
-; Total combinational functions               ; 6                   ;
+; Total combinational functions               ; 9                   ;
 ; Logic element usage by number of LUT inputs ;                     ;
-;     -- 4 input functions                    ; 0                   ;
-;     -- 3 input functions                    ; 6                   ;
+;     -- 4 input functions                    ; 8                   ;
+;     -- 3 input functions                    ; 1                   ;
 ;     -- <=2 input functions                  ; 0                   ;
 ;                                             ;                     ;
 ; Logic elements by mode                      ;                     ;
-;     -- normal mode                          ; 6                   ;
+;     -- normal mode                          ; 9                   ;
 ;     -- arithmetic mode                      ; 0                   ;
 ;                                             ;                     ;
 ; Total registers                             ; 0                   ;
@@ -204,9 +204,9 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 0                   ;
 ;                                             ;                     ;
 ; Maximum fan-out node                        ; operation_bit~input ;
-; Maximum fan-out                             ; 6                   ;
-; Total fan-out                               ; 40                  ;
-; Average fan-out                             ; 1.05                ;
+; Maximum fan-out                             ; 8                   ;
+; Total fan-out                               ; 57                  ;
+; Average fan-out                             ; 1.39                ;
 +---------------------------------------------+---------------------+
 
 
@@ -215,18 +215,18 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+--------------+
 ; Compilation Hierarchy Node                                     ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                                                                 ; Entity Name            ; Library Name ;
 +----------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+--------------+
-; |arithmeticunit                                                ; 6 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 16   ; 0            ; 0          ; |arithmeticunit                                                                                                                                                                     ; arithmeticunit         ; work         ;
+; |arithmeticunit                                                ; 9 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 16   ; 0            ; 0          ; |arithmeticunit                                                                                                                                                                     ; arithmeticunit         ; work         ;
 ;    |flags:instance_flags|                                      ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |arithmeticunit|flags:instance_flags                                                                                                                                                ; flags                  ; work         ;
-;    |inner_arithmetic:instance_inner_arithmetic|                ; 5 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |arithmeticunit|inner_arithmetic:instance_inner_arithmetic                                                                                                                          ; inner_arithmetic       ; work         ;
-;       |adder_subtractor_4bits:instance_adder_subtractor_4bits| ; 4 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |arithmeticunit|inner_arithmetic:instance_inner_arithmetic|adder_subtractor_4bits:instance_adder_subtractor_4bits                                                                   ; adder_subtractor_4bits ; work         ;
-;          |full_adder:instance_full_adder_1|                    ; 1 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |arithmeticunit|inner_arithmetic:instance_inner_arithmetic|adder_subtractor_4bits:instance_adder_subtractor_4bits|full_adder:instance_full_adder_1                                  ; full_adder             ; work         ;
-;             |half_adder:instance_half_adder_1|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |arithmeticunit|inner_arithmetic:instance_inner_arithmetic|adder_subtractor_4bits:instance_adder_subtractor_4bits|full_adder:instance_full_adder_1|half_adder:instance_half_adder_1 ; half_adder             ; work         ;
-;          |full_adder:instance_full_adder_2|                    ; 1 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |arithmeticunit|inner_arithmetic:instance_inner_arithmetic|adder_subtractor_4bits:instance_adder_subtractor_4bits|full_adder:instance_full_adder_2                                  ; full_adder             ; work         ;
-;             |half_adder:instance_half_adder_1|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |arithmeticunit|inner_arithmetic:instance_inner_arithmetic|adder_subtractor_4bits:instance_adder_subtractor_4bits|full_adder:instance_full_adder_2|half_adder:instance_half_adder_1 ; half_adder             ; work         ;
-;          |full_adder:instance_full_adder_3|                    ; 1 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |arithmeticunit|inner_arithmetic:instance_inner_arithmetic|adder_subtractor_4bits:instance_adder_subtractor_4bits|full_adder:instance_full_adder_3                                  ; full_adder             ; work         ;
-;             |half_adder:instance_half_adder_1|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |arithmeticunit|inner_arithmetic:instance_inner_arithmetic|adder_subtractor_4bits:instance_adder_subtractor_4bits|full_adder:instance_full_adder_3|half_adder:instance_half_adder_1 ; half_adder             ; work         ;
+;    |inner_arithmetic:instance_inner_arithmetic|                ; 8 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |arithmeticunit|inner_arithmetic:instance_inner_arithmetic                                                                                                                          ; inner_arithmetic       ; work         ;
+;       |adder_subtractor_4bits:instance_adder_subtractor_4bits| ; 7 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |arithmeticunit|inner_arithmetic:instance_inner_arithmetic|adder_subtractor_4bits:instance_adder_subtractor_4bits                                                                   ; adder_subtractor_4bits ; work         ;
+;          |full_adder:instance_full_adder_1|                    ; 2 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |arithmeticunit|inner_arithmetic:instance_inner_arithmetic|adder_subtractor_4bits:instance_adder_subtractor_4bits|full_adder:instance_full_adder_1                                  ; full_adder             ; work         ;
+;             |half_adder:instance_half_adder_2|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |arithmeticunit|inner_arithmetic:instance_inner_arithmetic|adder_subtractor_4bits:instance_adder_subtractor_4bits|full_adder:instance_full_adder_1|half_adder:instance_half_adder_2 ; half_adder             ; work         ;
+;          |full_adder:instance_full_adder_2|                    ; 2 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |arithmeticunit|inner_arithmetic:instance_inner_arithmetic|adder_subtractor_4bits:instance_adder_subtractor_4bits|full_adder:instance_full_adder_2                                  ; full_adder             ; work         ;
+;             |half_adder:instance_half_adder_2|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |arithmeticunit|inner_arithmetic:instance_inner_arithmetic|adder_subtractor_4bits:instance_adder_subtractor_4bits|full_adder:instance_full_adder_2|half_adder:instance_half_adder_2 ; half_adder             ; work         ;
+;          |full_adder:instance_full_adder_3|                    ; 2 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |arithmeticunit|inner_arithmetic:instance_inner_arithmetic|adder_subtractor_4bits:instance_adder_subtractor_4bits|full_adder:instance_full_adder_3                                  ; full_adder             ; work         ;
+;             |half_adder:instance_half_adder_2|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |arithmeticunit|inner_arithmetic:instance_inner_arithmetic|adder_subtractor_4bits:instance_adder_subtractor_4bits|full_adder:instance_full_adder_3|half_adder:instance_half_adder_2 ; half_adder             ; work         ;
 ;          |full_adder:instance_full_adder_4|                    ; 1 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |arithmeticunit|inner_arithmetic:instance_inner_arithmetic|adder_subtractor_4bits:instance_adder_subtractor_4bits|full_adder:instance_full_adder_4                                  ; full_adder             ; work         ;
-;             |half_adder:instance_half_adder_1|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |arithmeticunit|inner_arithmetic:instance_inner_arithmetic|adder_subtractor_4bits:instance_adder_subtractor_4bits|full_adder:instance_full_adder_4|half_adder:instance_half_adder_1 ; half_adder             ; work         ;
+;             |half_adder:instance_half_adder_2|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |arithmeticunit|inner_arithmetic:instance_inner_arithmetic|adder_subtractor_4bits:instance_adder_subtractor_4bits|full_adder:instance_full_adder_4|half_adder:instance_half_adder_2 ; half_adder             ; work         ;
 +----------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -252,12 +252,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 16                          ;
-; cycloneiii_lcell_comb ; 6                           ;
-;     normal            ; 6                           ;
-;         3 data inputs ; 6                           ;
+; cycloneiii_lcell_comb ; 10                          ;
+;     normal            ; 10                          ;
+;         1 data inputs ; 1                           ;
+;         3 data inputs ; 1                           ;
+;         4 data inputs ; 8                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 1.00                        ;
-; Average LUT depth     ; 1.00                        ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 3.85                        ;
 +-----------------------+-----------------------------+
 
 
@@ -276,7 +278,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Thu Oct 31 13:45:50 2024
+    Info: Processing started: Mon Nov 04 11:09:53 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ArithmeticUnit -c arithmeticunit
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -300,23 +302,21 @@ Info (12021): Found 2 design units, including 1 entities, in source file flags.v
     Info (12023): Found entity 1: flags File: C:/dev/Quartus/LabC/flags.vhd Line: 7
 Info (12127): Elaborating entity "arithmeticunit" for the top level hierarchy
 Info (12128): Elaborating entity "inner_arithmetic" for hierarchy "inner_arithmetic:instance_inner_arithmetic" File: C:/dev/Quartus/LabC/arithmeticunit.vhd Line: 72
-Info (12128): Elaborating entity "adder_subtractor_4bits" for hierarchy "inner_arithmetic:instance_inner_arithmetic|adder_subtractor_4bits:instance_adder_subtractor_4bits" File: C:/dev/Quartus/LabC/inner_arithmetic.vhd Line: 54
+Info (12128): Elaborating entity "adder_subtractor_4bits" for hierarchy "inner_arithmetic:instance_inner_arithmetic|adder_subtractor_4bits:instance_adder_subtractor_4bits" File: C:/dev/Quartus/LabC/inner_arithmetic.vhd Line: 55
 Info (12128): Elaborating entity "full_adder" for hierarchy "inner_arithmetic:instance_inner_arithmetic|adder_subtractor_4bits:instance_adder_subtractor_4bits|full_adder:instance_full_adder_1" File: C:/dev/Quartus/LabC/adder_subtractor_4bits.vhd Line: 53
 Info (12128): Elaborating entity "half_adder" for hierarchy "inner_arithmetic:instance_inner_arithmetic|adder_subtractor_4bits:instance_adder_subtractor_4bits|full_adder:instance_full_adder_1|half_adder:instance_half_adder_1" File: C:/dev/Quartus/LabC/full_adder.vhd Line: 48
 Info (12128): Elaborating entity "flags" for hierarchy "flags:instance_flags" File: C:/dev/Quartus/LabC/arithmeticunit.vhd Line: 88
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "carry_in" File: C:/dev/Quartus/LabC/arithmeticunit.vhd Line: 13
-Info (21057): Implemented 22 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 25 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 10 input pins
     Info (21059): Implemented 6 output pins
-    Info (21061): Implemented 6 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 4788 megabytes
-    Info: Processing ended: Thu Oct 31 13:46:03 2024
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:18
+    Info (21061): Implemented 9 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4797 megabytes
+    Info: Processing ended: Mon Nov 04 11:10:28 2024
+    Info: Elapsed time: 00:00:35
+    Info: Total CPU time (on all processors): 00:00:31
 
 

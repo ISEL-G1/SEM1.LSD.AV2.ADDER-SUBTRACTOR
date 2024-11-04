@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Thu Oct 31 13:46:03 2024
+Analysis & Synthesis Status : Successful - Mon Nov 04 11:10:28 2024
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : arithmeticunit
 Top-level Entity Name : arithmeticunit
 Family : MAX 10
-Total logic elements : 6
-    Total combinational functions : 6
+Total logic elements : 9
+    Total combinational functions : 9
     Dedicated logic registers : 0
 Total registers : 0
 Total pins : 16

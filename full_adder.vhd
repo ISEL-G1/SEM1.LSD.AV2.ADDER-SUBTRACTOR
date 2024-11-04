@@ -62,7 +62,7 @@ begin
 	
 		port map (
 			A => out_half_adder_1,
-			B => carry_half_adder_1,
+			B => carry_in,
 			
 			result => out_half_adder_2,
 			carry_out => carry_half_adder_2

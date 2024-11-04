@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
 
--- DATE "10/31/2024 14:32:11"
+-- DATE "11/04/2024 11:11:03"
 
 -- 
 -- Device: Altera 10M50DAF484C6GES Package FBGA484
@@ -99,22 +99,22 @@ ENTITY 	arithmeticunit IS
 END arithmeticunit;
 
 -- Design Ports Information
--- carry_in	=>  Location: PIN_B14,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- carry_out	=>  Location: PIN_A9,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- result[0]	=>  Location: PIN_A10,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- result[1]	=>  Location: PIN_B10,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- result[2]	=>  Location: PIN_D13,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- result[3]	=>  Location: PIN_C13,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- overflow	=>  Location: PIN_A8,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- B[3]	=>  Location: PIN_A14,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- operation_bit	=>  Location: PIN_F15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- B[3]	=>  Location: PIN_A14,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- A[3]	=>  Location: PIN_C12,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- A[0]	=>  Location: PIN_C10,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- B[0]	=>  Location: PIN_A12,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- A[1]	=>  Location: PIN_C11,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- B[1]	=>  Location: PIN_B12,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- A[2]	=>  Location: PIN_D12,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- B[2]	=>  Location: PIN_A13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- A[2]	=>  Location: PIN_D12,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- B[1]	=>  Location: PIN_B12,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- A[1]	=>  Location: PIN_C11,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- B[0]	=>  Location: PIN_A12,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- carry_in	=>  Location: PIN_B14,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- A[0]	=>  Location: PIN_C10,	 I/O Standard: 2.5 V,	 Current Strength: Default
 
 
 ARCHITECTURE structure OF arithmeticunit IS
@@ -136,7 +136,6 @@ SIGNAL ww_result : std_logic_vector(3 DOWNTO 0);
 SIGNAL ww_overflow : std_logic;
 SIGNAL \~QUARTUS_CREATED_ADC1~_CHSEL_bus\ : std_logic_vector(4 DOWNTO 0);
 SIGNAL \~QUARTUS_CREATED_ADC2~_CHSEL_bus\ : std_logic_vector(4 DOWNTO 0);
-SIGNAL \carry_in~input_o\ : std_logic;
 SIGNAL \~QUARTUS_CREATED_GND~I_combout\ : std_logic;
 SIGNAL \~QUARTUS_CREATED_UNVM~~busy\ : std_logic;
 SIGNAL \~QUARTUS_CREATED_ADC1~~eoc\ : std_logic;
@@ -147,20 +146,26 @@ SIGNAL \result[1]~output_o\ : std_logic;
 SIGNAL \result[2]~output_o\ : std_logic;
 SIGNAL \result[3]~output_o\ : std_logic;
 SIGNAL \overflow~output_o\ : std_logic;
-SIGNAL \A[3]~input_o\ : std_logic;
-SIGNAL \B[3]~input_o\ : std_logic;
-SIGNAL \operation_bit~input_o\ : std_logic;
-SIGNAL \instance_inner_arithmetic|carry_out~combout\ : std_logic;
+SIGNAL \B[1]~input_o\ : std_logic;
 SIGNAL \B[0]~input_o\ : std_logic;
 SIGNAL \A[0]~input_o\ : std_logic;
-SIGNAL \instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_1|instance_half_adder_2|result~0_combout\ : std_logic;
-SIGNAL \B[1]~input_o\ : std_logic;
+SIGNAL \carry_in~input_o\ : std_logic;
+SIGNAL \operation_bit~input_o\ : std_logic;
+SIGNAL \instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_1|carry_out~0_combout\ : std_logic;
 SIGNAL \A[1]~input_o\ : std_logic;
-SIGNAL \instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_2|instance_half_adder_2|result~0_combout\ : std_logic;
+SIGNAL \instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_2|carry_out~0_combout\ : std_logic;
 SIGNAL \B[2]~input_o\ : std_logic;
 SIGNAL \A[2]~input_o\ : std_logic;
+SIGNAL \instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_3|carry_out~0_combout\ : std_logic;
+SIGNAL \A[3]~input_o\ : std_logic;
+SIGNAL \B[3]~input_o\ : std_logic;
+SIGNAL \instance_inner_arithmetic|carry_out~0_combout\ : std_logic;
+SIGNAL \instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_1|instance_half_adder_2|result~0_combout\ : std_logic;
+SIGNAL \instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_2|instance_half_adder_2|result~0_combout\ : std_logic;
 SIGNAL \instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_3|instance_half_adder_2|result~0_combout\ : std_logic;
 SIGNAL \instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_4|instance_half_adder_2|result~0_combout\ : std_logic;
+SIGNAL \instance_flags|overflow~0_combout\ : std_logic;
+SIGNAL \instance_flags|ALT_INV_overflow~0_combout\ : std_logic;
 
 COMPONENT hard_block
     PORT (
@@ -185,6 +190,7 @@ ww_devpor <= devpor;
 \~QUARTUS_CREATED_ADC1~_CHSEL_bus\ <= (\~QUARTUS_CREATED_GND~I_combout\ & \~QUARTUS_CREATED_GND~I_combout\ & \~QUARTUS_CREATED_GND~I_combout\ & \~QUARTUS_CREATED_GND~I_combout\ & \~QUARTUS_CREATED_GND~I_combout\);
 
 \~QUARTUS_CREATED_ADC2~_CHSEL_bus\ <= (\~QUARTUS_CREATED_GND~I_combout\ & \~QUARTUS_CREATED_GND~I_combout\ & \~QUARTUS_CREATED_GND~I_combout\ & \~QUARTUS_CREATED_GND~I_combout\ & \~QUARTUS_CREATED_GND~I_combout\);
+\instance_flags|ALT_INV_overflow~0_combout\ <= NOT \instance_flags|overflow~0_combout\;
 auto_generated_inst : hard_block
 PORT MAP (
 	devoe => ww_devoe,
@@ -212,7 +218,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \instance_inner_arithmetic|carry_out~combout\,
+	i => \instance_inner_arithmetic|carry_out~0_combout\,
 	devoe => ww_devoe,
 	o => \carry_out~output_o\);
 
@@ -272,12 +278,12 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => GND,
+	i => \instance_flags|ALT_INV_overflow~0_combout\,
 	devoe => ww_devoe,
 	o => \overflow~output_o\);
 
--- Location: IOIBUF_X54_Y54_N29
-\A[3]~input\ : fiftyfivenm_io_ibuf
+-- Location: IOIBUF_X49_Y54_N1
+\B[1]~input\ : fiftyfivenm_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
@@ -285,48 +291,8 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => ww_A(3),
-	o => \A[3]~input_o\);
-
--- Location: IOIBUF_X58_Y54_N29
-\B[3]~input\ : fiftyfivenm_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	listen_to_nsleep_signal => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_B(3),
-	o => \B[3]~input_o\);
-
--- Location: IOIBUF_X69_Y54_N1
-\operation_bit~input\ : fiftyfivenm_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	listen_to_nsleep_signal => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_operation_bit,
-	o => \operation_bit~input_o\);
-
--- Location: LCCOMB_X52_Y53_N24
-\instance_inner_arithmetic|carry_out\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \instance_inner_arithmetic|carry_out~combout\ = (\A[3]~input_o\ & (\B[3]~input_o\)) # (!\A[3]~input_o\ & ((\operation_bit~input_o\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111001111000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \A[3]~input_o\,
-	datac => \B[3]~input_o\,
-	datad => \operation_bit~input_o\,
-	combout => \instance_inner_arithmetic|carry_out~combout\);
+	i => ww_B(1),
+	o => \B[1]~input_o\);
 
 -- Location: IOIBUF_X54_Y54_N22
 \B[0]~input\ : fiftyfivenm_io_ibuf
@@ -352,24 +318,8 @@ PORT MAP (
 	i => ww_A(0),
 	o => \A[0]~input_o\);
 
--- Location: LCCOMB_X52_Y53_N2
-\instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_1|instance_half_adder_2|result~0\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_1|instance_half_adder_2|result~0_combout\ = (\A[0]~input_o\) # (\B[0]~input_o\ $ (\operation_bit~input_o\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1101110111101110",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \B[0]~input_o\,
-	datab => \A[0]~input_o\,
-	datad => \operation_bit~input_o\,
-	combout => \instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_1|instance_half_adder_2|result~0_combout\);
-
--- Location: IOIBUF_X49_Y54_N1
-\B[1]~input\ : fiftyfivenm_io_ibuf
+-- Location: IOIBUF_X56_Y54_N1
+\carry_in~input\ : fiftyfivenm_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
@@ -377,8 +327,38 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => ww_B(1),
-	o => \B[1]~input_o\);
+	i => ww_carry_in,
+	o => \carry_in~input_o\);
+
+-- Location: IOIBUF_X69_Y54_N1
+\operation_bit~input\ : fiftyfivenm_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	listen_to_nsleep_signal => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_operation_bit,
+	o => \operation_bit~input_o\);
+
+-- Location: LCCOMB_X52_Y53_N16
+\instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_1|carry_out~0\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_1|carry_out~0_combout\ = (\B[0]~input_o\ & ((\carry_in~input_o\ & ((!\operation_bit~input_o\))) # (!\carry_in~input_o\ & (\A[0]~input_o\)))) # (!\B[0]~input_o\ & 
+-- ((\carry_in~input_o\ & (\A[0]~input_o\)) # (!\carry_in~input_o\ & ((\operation_bit~input_o\)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0100110111101000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \B[0]~input_o\,
+	datab => \A[0]~input_o\,
+	datac => \carry_in~input_o\,
+	datad => \operation_bit~input_o\,
+	combout => \instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_1|carry_out~0_combout\);
 
 -- Location: IOIBUF_X51_Y54_N22
 \A[1]~input\ : fiftyfivenm_io_ibuf
@@ -392,21 +372,23 @@ PORT MAP (
 	i => ww_A(1),
 	o => \A[1]~input_o\);
 
--- Location: LCCOMB_X50_Y53_N24
-\instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_2|instance_half_adder_2|result~0\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X52_Y53_N10
+\instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_2|carry_out~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_2|instance_half_adder_2|result~0_combout\ = (\A[1]~input_o\) # (\B[1]~input_o\ $ (\operation_bit~input_o\))
+-- \instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_2|carry_out~0_combout\ = (\instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_1|carry_out~0_combout\ & ((\A[1]~input_o\) # (\B[1]~input_o\ $ 
+-- (\operation_bit~input_o\)))) # (!\instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_1|carry_out~0_combout\ & (\A[1]~input_o\ & (\B[1]~input_o\ $ (\operation_bit~input_o\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111101011010",
+	lut_mask => "1101010011101000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \B[1]~input_o\,
-	datac => \operation_bit~input_o\,
-	datad => \A[1]~input_o\,
-	combout => \instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_2|instance_half_adder_2|result~0_combout\);
+	datab => \instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_1|carry_out~0_combout\,
+	datac => \A[1]~input_o\,
+	datad => \operation_bit~input_o\,
+	combout => \instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_2|carry_out~0_combout\);
 
 -- Location: IOIBUF_X54_Y54_N15
 \B[2]~input\ : fiftyfivenm_io_ibuf
@@ -432,17 +414,113 @@ PORT MAP (
 	i => ww_A(2),
 	o => \A[2]~input_o\);
 
--- Location: LCCOMB_X52_Y53_N4
-\instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_3|instance_half_adder_2|result~0\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X52_Y53_N12
+\instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_3|carry_out~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_3|instance_half_adder_2|result~0_combout\ = (\A[2]~input_o\) # (\B[2]~input_o\ $ (\operation_bit~input_o\))
+-- \instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_3|carry_out~0_combout\ = (\instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_2|carry_out~0_combout\ & ((\A[2]~input_o\) # (\B[2]~input_o\ $ 
+-- (\operation_bit~input_o\)))) # (!\instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_2|carry_out~0_combout\ & (\A[2]~input_o\ & (\B[2]~input_o\ $ (\operation_bit~input_o\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111001111111100",
+	lut_mask => "1011001011101000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
+	dataa => \instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_2|carry_out~0_combout\,
+	datab => \B[2]~input_o\,
+	datac => \A[2]~input_o\,
+	datad => \operation_bit~input_o\,
+	combout => \instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_3|carry_out~0_combout\);
+
+-- Location: IOIBUF_X54_Y54_N29
+\A[3]~input\ : fiftyfivenm_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	listen_to_nsleep_signal => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_A(3),
+	o => \A[3]~input_o\);
+
+-- Location: IOIBUF_X58_Y54_N29
+\B[3]~input\ : fiftyfivenm_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	listen_to_nsleep_signal => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_B(3),
+	o => \B[3]~input_o\);
+
+-- Location: LCCOMB_X52_Y53_N22
+\instance_inner_arithmetic|carry_out~0\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \instance_inner_arithmetic|carry_out~0_combout\ = (\instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_3|carry_out~0_combout\ & ((\A[3]~input_o\ & ((!\operation_bit~input_o\))) # (!\A[3]~input_o\ & (\B[3]~input_o\)))) # 
+-- (!\instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_3|carry_out~0_combout\ & ((\A[3]~input_o\ & (\B[3]~input_o\)) # (!\A[3]~input_o\ & ((\operation_bit~input_o\)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0111000111101000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_3|carry_out~0_combout\,
+	datab => \A[3]~input_o\,
+	datac => \B[3]~input_o\,
+	datad => \operation_bit~input_o\,
+	combout => \instance_inner_arithmetic|carry_out~0_combout\);
+
+-- Location: LCCOMB_X52_Y53_N24
+\instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_1|instance_half_adder_2|result~0\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_1|instance_half_adder_2|result~0_combout\ = \B[0]~input_o\ $ (\A[0]~input_o\ $ (\carry_in~input_o\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1001011010010110",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \B[0]~input_o\,
+	datab => \A[0]~input_o\,
+	datac => \carry_in~input_o\,
+	combout => \instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_1|instance_half_adder_2|result~0_combout\);
+
+-- Location: LCCOMB_X52_Y53_N2
+\instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_2|instance_half_adder_2|result~0\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_2|instance_half_adder_2|result~0_combout\ = \B[1]~input_o\ $ (\instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_1|carry_out~0_combout\ $ 
+-- (\A[1]~input_o\ $ (\operation_bit~input_o\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0110100110010110",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \B[1]~input_o\,
+	datab => \instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_1|carry_out~0_combout\,
+	datac => \A[1]~input_o\,
+	datad => \operation_bit~input_o\,
+	combout => \instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_2|instance_half_adder_2|result~0_combout\);
+
+-- Location: LCCOMB_X52_Y53_N4
+\instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_3|instance_half_adder_2|result~0\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_3|instance_half_adder_2|result~0_combout\ = \instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_2|carry_out~0_combout\ $ (\B[2]~input_o\ $ 
+-- (\A[2]~input_o\ $ (\operation_bit~input_o\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0110100110010110",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_2|carry_out~0_combout\,
 	datab => \B[2]~input_o\,
 	datac => \A[2]~input_o\,
 	datad => \operation_bit~input_o\,
@@ -451,30 +529,38 @@ PORT MAP (
 -- Location: LCCOMB_X52_Y53_N14
 \instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_4|instance_half_adder_2|result~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_4|instance_half_adder_2|result~0_combout\ = (\A[3]~input_o\) # (\B[3]~input_o\ $ (\operation_bit~input_o\))
+-- \instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_4|instance_half_adder_2|result~0_combout\ = \instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_3|carry_out~0_combout\ $ (\A[3]~input_o\ $ 
+-- (\B[3]~input_o\ $ (\operation_bit~input_o\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100111111111100",
+	lut_mask => "0110100110010110",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
+	dataa => \instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_3|carry_out~0_combout\,
 	datab => \A[3]~input_o\,
 	datac => \B[3]~input_o\,
 	datad => \operation_bit~input_o\,
 	combout => \instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_4|instance_half_adder_2|result~0_combout\);
 
--- Location: IOIBUF_X56_Y54_N1
-\carry_in~input\ : fiftyfivenm_io_ibuf
+-- Location: LCCOMB_X52_Y53_N8
+\instance_flags|overflow~0\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \instance_flags|overflow~0_combout\ = (\instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_3|carry_out~0_combout\ & ((\A[3]~input_o\) # (\B[3]~input_o\ $ (\operation_bit~input_o\)))) # 
+-- (!\instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_3|carry_out~0_combout\ & ((\B[3]~input_o\ $ (!\operation_bit~input_o\)) # (!\A[3]~input_o\)))
+
 -- pragma translate_off
 GENERIC MAP (
-	bus_hold => "false",
-	listen_to_nsleep_signal => "false",
-	simulate_z_as => "z")
+	lut_mask => "1101101110111101",
+	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	i => ww_carry_in,
-	o => \carry_in~input_o\);
+	dataa => \instance_inner_arithmetic|instance_adder_subtractor_4bits|instance_full_adder_3|carry_out~0_combout\,
+	datab => \A[3]~input_o\,
+	datac => \B[3]~input_o\,
+	datad => \operation_bit~input_o\,
+	combout => \instance_flags|overflow~0_combout\);
 
 -- Location: UNVM_X0_Y40_N40
 \~QUARTUS_CREATED_UNVM~\ : fiftyfivenm_unvm
